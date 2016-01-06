@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<title>GTI Hub</title>
+		<style>
+			body {
+				background-color: #222;
+				color: #fff;
+				font-weight: bold;
+				font-size: 16px;
+				overflow: hidden;
+			}
+
+			#gti {
+				transition: transform 1.5s ease-in;
+				position: absolute;
+				top: 50%;
+				margin-top: -87px;
+			}
+
+			.gti-bottom {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="gti">
+			<pre class="gti-top">   ,---------------.
+  /  /``````|``````\\\\
+ /  /_______|_______\\\\________
+|]      GTI |'       |        |]</pre>
+			<pre class="gti-bottom">=  .-:-.    |________|  .-:-.  =
+ `  -+-  --------------  -+-  '
+   '-:-'                '-:-'  </pre>
+			<pre class="gti-bottom">=  .:-:.    |________|  .:-:.  =
+ `   X   --------------   X   '
+   ':-:'                ':-:'  </pre>
+		</div>
+
+		<script>
+			var gti = document.querySelector('#gti');
+			var bottoms = document.querySelectorAll('.gti-bottom');
+
+			var i = 0;
+			setInterval(function() {
+				bottoms[(i++)%2].style.display = 'block';
+				bottoms[i%2].style.display = 'none';
+			}, 100);
+
+			setTimeout(function() {
+				gti.style.transform = 'translateX('+window.innerWidth+'px)';
+			}, 0);
+
+			setTimeout(function() {
+				window.location = 'https://github.com/';
+			}, 1100);
+		</script>
+	</body>
+</html>
